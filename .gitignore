@@ -1,0 +1,38 @@
+# Local Python / JS tooling
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.json.key
+*credentials*.json
+service-account*.json
+
+# Reproducible samples are committed; downloads and trained artifacts are generated.
+data/raw/
+data/cache/
+data/model/
+data/satellite/
+artifacts/*
+!artifacts/.gitkeep
+.local-archive/
+
+# Editor / OS files
+.DS_Store
+.idea/
+.vscode/
+*.log

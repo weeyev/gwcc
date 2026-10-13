@@ -1,0 +1,9 @@
+{
+  "name": "@geocast/frontend",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/app.js && node --check src/config.js && node --check src/components/outlook.js && node --check src/lib/api.js && node --check src/lib/series.js"
+  }
+}

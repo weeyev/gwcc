@@ -1,0 +1,14 @@
+{
+  "name": "geocast",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["frontend"],
+  "scripts": {
+    "dev": "python -m uvicorn geocast.api:app --host 127.0.0.1 --port 5173 --reload --reload-dir backend/src",
+    "check": "npm run check --workspace frontend",
+    "test": "python -m pytest backend/tests",
+    "train": "python -m geocast.cli train --source sample"
+  },
+  "engines": {"node": ">=20"}
+}
