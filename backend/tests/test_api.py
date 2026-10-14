@@ -1,3 +1,5 @@
+import re
+
 from fastapi.testclient import TestClient
 
 from geocast.api import create_app
@@ -17,7 +19,12 @@ def test_forecast_routes_and_frontend_boundary(settings):
     assert client.get("/api/forecast/missing").status_code == 404
     assert client.get("/api/forecast/chennai").status_code == 503
     assert client.get("/").status_code == 200
-    assert client.get("/src/app.js").status_code == 200
+    assert client.get("/dashboard").status_code == 200
+    assert client.get("/dashboard").content == client.get("/").content
+    scripts = re.findall(r'<script[^>]+src="([^"]+)"', client.get("/").text)
+    assert scripts
+    for script in scripts:
+        assert client.get(script).status_code == 200
     assert client.get("/docs").status_code == 200
     for path in (
         "/.env",

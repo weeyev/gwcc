@@ -1,5 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "fastapi",
-  "buildCommand": "PYTHONPATH=backend/src python -m geocast.cli train --source sample --region all"
+  "buildCommand": "npm ci && npm run build --workspace frontend && PYTHONPATH=backend/src python -m geocast.cli train --source sample --region all"
 }

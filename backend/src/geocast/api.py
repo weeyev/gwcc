@@ -3,6 +3,7 @@
 import logging
 
 from fastapi import FastAPI, HTTPException, Query, Response
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from geocast.config import MODEL_VERSION, REGIONS, Settings
@@ -60,6 +61,11 @@ def create_app(settings=None):
 
     # Only frontend files are web-accessible. Datasets, .env and artifacts stay private.
     if settings.frontend_dir.is_dir():
+
+        @app.get("/dashboard", include_in_schema=False)
+        def dashboard():
+            return FileResponse(settings.frontend_dir / "index.html")
+
         app.mount("/", StaticFiles(directory=settings.frontend_dir, html=True), name="frontend")
     return app
 
