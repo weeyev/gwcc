@@ -1,0 +1,11 @@
+[project]
+name = "geocast-deployment"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["geocast-backend"]
+
+[tool.uv.sources]
+geocast-backend = { path = "backend" }
+
+[tool.vercel]
+entrypoint = "app:app"

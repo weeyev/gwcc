@@ -1,2 +1,0 @@
-# Install the backend and its declared dependencies.
-./backend

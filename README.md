@@ -103,7 +103,7 @@ The repository is prepared for an ordinary Git commit and push. No GitHub reposi
 Import `weeyev/gwcc` with **Root Directory set to the repository root** (leave it
 blank, not `backend`). The committed `vercel.json` selects FastAPI and trains all
 three regions from the checked-in samples during the build. Leave Install Command
-and Output Directory at their defaults. `requirements.txt` installs the backend;
+and Output Directory at their defaults. `pyproject.toml` installs the local `geocast-backend` package;
 `app.py` loads its source so the frontend, samples, and generated model paths stay
 relative to the repository root. No NASA or Google credentials are required.
 
