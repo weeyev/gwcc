@@ -20,7 +20,7 @@ class Settings:
     sample_dir: Path = ROOT / "data" / "samples"
     artifact_dir: Path = ROOT / "artifacts"
     cache_dir: Path = ROOT / "data" / "cache"
-    frontend_dir: Path = ROOT / "frontend"
+    frontend_dir: Path = (ROOT / "frontend" / "dist") if (ROOT / "frontend" / "dist").is_dir() else (ROOT / "frontend")
 
     @classmethod
     def from_env(cls):

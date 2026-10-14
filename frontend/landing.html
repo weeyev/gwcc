@@ -1,1 +1,550 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>GeoCast — Understand Earth’s change</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/src/styles/landing.css"></head><body><header class="landing-header"><a class="landing-logo" href="/landing.html"><span class="logo-orbit">◎</span><b>GeoCast<span>.</span></b></a><nav><a href="#overview">Overview</a><a href="#solutions">Solutions</a><a href="#pipeline">Methodology</a><a href="#about">About</a></nav><a class="landing-nav-cta" href="/">Open dashboard →</a></header><main><section id="overview" class="landing-hero"><div class="hero-copy"><div class="landing-kicker"><span></span>GEOSPATIAL ENVIRONMENTAL INTELLIGENCE</div><h1>Understand Earth’s change.<br><em>Before it becomes a crisis.</em></h1><p>Explore satellite observations and Python-trained forecasts for surface heat, vegetation, and a climatic water-availability proxy.</p><div class="landing-actions"><a class="landing-primary" href="/">Explore GeoCast <span>↗</span></a><a class="landing-secondary" href="#pipeline">View methodology <span>↘</span></a></div><div class="hero-foot"><div><b>03</b><span>ANALYSIS LENSES</span></div><div><b>13+</b><span>WEATHER YEARS</span></div><div><b>01</b><span>CONNECTED VIEW</span></div></div></div><div class="hero-visual"><div class="visual-grid"></div><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="land-mass land-one"></div><div class="land-mass land-two"></div><div class="heat-spot hot-one"></div><div class="heat-spot hot-two"></div><div class="visual-top"><span>GE O C A S T / OBSERVATION 01</span><span>12.6819° N &nbsp; 79.9888° E</span></div><div class="visual-crosshair">+</div><div class="visual-callout"><span>◉</span><div><small>THERMAL SIGNAL</small><strong>Chengalpattu region</strong><em>Illustrative observation layer</em></div></div><div class="visual-bottom"><span>LANDSAT 8/9</span><span>◀━━━●━━━▶</span><span>2013 — 2026</span></div></div></section><section id="solutions" class="landing-solutions"><div class="landing-section-head"><div><div class="landing-kicker"><span></span>ENVIRONMENTAL INTELLIGENCE CORE</div><h2>One landscape.<br><em>Multiple perspectives.</em></h2></div><p>GeoCast combines MODIS satellite observations and ERA5 weather histories with validated monthly forecasts.</p></div><div class="solution-grid"><article><span class="solution-num">01 / THERMAL</span><div class="solution-icon thermal">♨</div><h3>Land temperature</h3><p>Forecast MODIS land surface temperature using prior satellite and weather conditions.</p><a href="/?outcome=heat#forecast">View heat context ↗</a></article><article><span class="solution-num">02 / HYDROLOGY</span><div class="solution-icon hydrology">≈</div><h3>Water availability</h3><p>Forecast rainfall minus reference evapotranspiration as a climatic water-balance proxy.</p><a href="/?outcome=water#forecast">View water outlook ↗</a></article><article><span class="solution-num">03 / VEGETATION</span><div class="solution-icon chlorophyll">✿</div><h3>Vegetation greenness</h3><p>Forecast MODIS NDVI using earlier vegetation, temperature, and weather observations.</p><a href="/?outcome=vegetation#forecast">View vegetation outlook ↗</a></article></div></section><section id="pipeline" class="pipeline-section"><div class="landing-kicker"><span></span>SCIENTIFIC PIPELINE</div><div class="pipeline-heading"><h2>From observation<br><em>to understanding.</em></h2><p>Python prepares matched monthly histories, fits ridge regressions, and checks forecasts on withheld months. Ground measurements remain essential for validation.</p></div><div class="pipeline-steps"><article><span>01</span><div class="pipeline-icon">✳</div><h3>Acquire</h3><p>Retrieve public MODIS satellite products and ERA5 weather records for the selected region.</p></article><article><span>02</span><div class="pipeline-icon">◌</div><h3>Prepare</h3><p>Filter missing numeric observations and match monthly records. Full satellite QA screening remains a limitation.</p></article><article><span>03</span><div class="pipeline-icon">▦</div><h3>Derive</h3><p>Train monthly ridge models in Python and save coefficients, data provenance, and test results.</p></article><article><span>04</span><div class="pipeline-icon">⌁</div><h3>Interpret</h3><p>Inspect future outcomes, input contributions, and forecast errors before investigating causes.</p></article></div></section><section id="about" class="landing-cta"><div class="landing-kicker"><span></span>BUILT FOR BETTER DECISIONS</div><h2>A clearer picture of<br><em>a changing planet.</em></h2><p>Start with the interactive GeoCast workspace and explore the project’s three environmental indicators.</p><a class="landing-primary" href="/">Open the dashboard <span>↗</span></a></section></main><footer class="landing-footer"><a class="landing-logo" href="/landing.html"><span class="logo-orbit">◎</span><b>GeoCast<span>.</span></b></a><span>MODIS + ERA5 observations · Python forecasts</span><a href="/">Dashboard ↗</a></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeoCast · Planetary Environmental Intelligence & Forecasting</title>
+  
+  <!-- Light weight Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/landing.css">
+</head>
+<body>
+
+  <!-- FLOATING NAVIGATION BAR -->
+  <div class="landing-nav-wrapper">
+    <nav class="landing-nav">
+      <a class="nav-brand" href="/landing.html">
+        <div class="nav-brand-icon">◎</div>
+        <div class="nav-brand-name">GeoCast<span>.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Platform</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#usecases">Use Cases</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a class="nav-cta" href="/">Try it out →</a>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION WITH SKY-BLUE ATMOSPHERE & CLOUD SHADER -->
+  <header id="overview" class="hero-section">
+    <div class="hero-bg-container">
+      <img src="/src/assets/sky_clouds_hero_bg.jpg" alt="Atmospheric sky clouds" class="hero-bg-image" />
+      <canvas id="cloud-shader-canvas" class="cloud-shader-overlay"></canvas>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Live Real-Time Satellite & Climate Intelligence
+      </div>
+      
+      <h1 class="hero-title">
+        See Weather Before<br>
+        <strong>It Becomes Risk.</strong>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Monitor ground-level thermal anomalies, vegetation health, and moisture balances in real time. GeoCast unifies NASA MODIS satellite passes with ERA5 climate modeling to deliver tested 6-month environmental foresight for planners, agronomists, and operators.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="/">
+          Try it out <span>→</span>
+        </a>
+        <a class="btn-secondary" href="#architecture">
+          View Architecture <span>↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3D CONTAINER SCROLL MOCKUP WITH GLASSY BORDER ON BOTTOM HALF SCREEN -->
+    <div class="container-scroll">
+      <div class="container-scroll-card">
+        <div class="mockup-glassy-frame">
+          <!-- Window Header Bar -->
+          <div class="mockup-header-bar">
+            <div class="window-dots">
+              <span class="window-dot red"></span>
+              <span class="window-dot yellow"></span>
+              <span class="window-dot green"></span>
+            </div>
+            
+            <div class="mockup-tabs">
+              <button id="view-mockup-tab" class="mockup-tab-btn active" type="button">Dashboard View</button>
+              <button id="view-code-tab" class="mockup-tab-btn" type="button">Interactive GIS Mode</button>
+            </div>
+
+            <div class="mockup-indicator">
+              <span style="display:inline-block;width:6px;height:6px;background:#10b981;border-radius:50%;"></span>
+              Connected to API
+            </div>
+          </div>
+
+          <!-- Mockup Window Body -->
+          <div class="mockup-body">
+            <!-- View 1: High-Res Dashboard Screenshot Mockup -->
+            <div id="mockup-image-view">
+              <img 
+                src="/src/assets/geocast_dashboard_mockup.jpg" 
+                alt="GeoCast Environmental Intelligence Dashboard Interface" 
+                class="mockup-image" 
+              />
+            </div>
+
+            <!-- View 2: Code-Rendered Interactive Map & Dashboard Preview -->
+            <div id="code-dashboard-view" class="code-dashboard hidden">
+              <div class="code-map-panel">
+                <div class="code-map-header">
+                  <h4>Surface Heat Anomaly & Multi-Spectral Scan</h4>
+                  <span>MODIS MOD11A2 · 1 km</span>
+                </div>
+                <div class="code-map-visual">
+                  <div class="code-map-grid"></div>
+                  <div class="thermal-contour contour-1"></div>
+                  <div class="thermal-contour contour-2"></div>
+                  <div class="thermal-contour contour-3"></div>
+                  <div class="map-pin">
+                    <span class="map-pin-pulse"></span>
+                    Chengalpattu Area · +2.4°C Anomaly
+                  </div>
+                </div>
+              </div>
+
+              <div class="code-widgets-panel">
+                <div class="widget-card">
+                  <small>OBSERVED LAND TEMP</small>
+                  <h3>26.8°C</h3>
+                  <p>↑ +1.2°C Above Seasonal Median</p>
+                  <div class="mini-chart">
+                    <div class="mini-bar" style="height:35%;"></div>
+                    <div class="mini-bar" style="height:48%;"></div>
+                    <div class="mini-bar high" style="height:70%;"></div>
+                    <div class="mini-bar peak" style="height:90%;"></div>
+                    <div class="mini-bar high" style="height:65%;"></div>
+                    <div class="mini-bar" style="height:52%;"></div>
+                  </div>
+                </div>
+
+                <div class="widget-card">
+                  <small>6-MONTH VEGETATION OUTLOOK</small>
+                  <h3>0.48 NDVI</h3>
+                  <p>Stable green canopy recovery</p>
+                  <div style="font-size:11px;color:#64748b;margin-top:8px;">
+                    Model RMSE: 0.029 (Ridge monthly autoregression)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUSTED DATA SOURCES STRIP -->
+  <section class="trust-strip">
+    <div class="trust-title">Harmonized With Global Environmental Data Repositories</div>
+    <div class="trust-logos">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>NASA Earthdata (MODIS)</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+        <span>Copernicus ECMWF (ERA5)</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Open-Meteo API</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>USGS Landsat-9</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        <span>Google Earth Engine</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES: EVERYTHING YOU NEED TO MONITOR ENVIRONMENTAL CONDITIONS -->
+  <section id="features" class="section">
+    <div class="section-head-center">
+      <span class="section-kicker">Features Overview</span>
+      <h2 class="section-title">
+        Everything You Need To Monitor<br>
+        <strong>Environmental Conditions.</strong>
+      </h2>
+      <p class="section-desc">
+        Satellite telemetry translated into interpretable metrics. Avoid unexpected climate shocks with automated multi-modal analysis calibrated against historical ground baselines.
+      </p>
+    </div>
+
+    <div class="feature-grid-4">
+      <!-- Card 1 -->
+      <article class="feature-card">
+        <div class="feature-badge-row">
+          <span class="feature-num">01 / THERMAL MONITORING</span>
+          <div class="feature-icon-box icon-thermal">♨</div>
+        </div>
+        <h3>Live Land Surface Monitoring</h3>
+        <p>
+          Continuous daytime and nighttime radiometric temperature extraction from NASA MOD11A2 observations. Identify micro-urban heat pockets and sudden heatwave build-ups before they intensify.
+        </p>
+        <div class="feature-preview-widget">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#64748b;">Current Ground Temperature</span>
+            <strong style="font-size:16px;color:#ea580c;">26.8°C</strong>
+          </div>
+          <div style="margin-top:6px;font-size:11px;color:#10b981;">● Calibrated with 13-year seasonal normals</div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="feature-card">
+        <div class="feature-badge-row">
+          <span class="feature-num">02 / EXTREME THREATS</span>
+          <div class="feature-icon-box icon-alert">⚠</div>
+        </div>
+        <h3>Extreme Environmental Alerts</h3>
+        <p>
+          Early warning thresholds triggered when land surface heat, rainfall deficits, or vegetation loss diverge beyond ±2.0 standard deviations from the regional climate baseline.
+        </p>
+        <div class="feature-preview-widget">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#64748b;">Threat Level</span>
+            <span style="font-size:11px;background:#fef2f2;color:#ef4444;padding:2px 8px;border-radius:4px;font-weight:600;">Elevated Thermal Risk</span>
+          </div>
+          <div style="margin-top:6px;font-size:11px;color:#64748b;">Alert dispatched 6 weeks prior to heat peak</div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="feature-card">
+        <div class="feature-badge-row">
+          <span class="feature-num">03 / HYDROLOGY PROXY</span>
+          <div class="feature-icon-box icon-water">≈</div>
+        </div>
+        <h3>Interactive Moisture & Water Maps</h3>
+        <p>
+          Calculates monthly precipitation minus reference evapotranspiration (P − PET) across regional grid cells, identifying moisture deficits and aquifer depletion risks ahead of monsoon shifts.
+        </p>
+        <div class="feature-preview-widget">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#64748b;">Net Climatic Water Balance</span>
+            <strong style="font-size:16px;color:#0284c7;">+42.6 mm/mo</strong>
+          </div>
+          <div style="margin-top:6px;font-size:11px;color:#64748b;">Integrated with ERA5 reanalysis flux</div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="feature-card">
+        <div class="feature-badge-row">
+          <span class="feature-num">04 / VEGETATION CANOPY</span>
+          <div class="feature-icon-box icon-vegetation">✿</div>
+        </div>
+        <h3>Vegetation Index & Crop Analytics</h3>
+        <p>
+          High-precision 250m Normalized Difference Vegetation Index (NDVI) tracking to assess chlorophyll density, agricultural crop stress, and post-monsoon vegetative rebound.
+        </p>
+        <div class="feature-preview-widget">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#64748b;">Vegetative Health Index</span>
+            <strong style="font-size:16px;color:#16a34a;">0.53 NDVI</strong>
+          </div>
+          <div style="margin-top:6px;font-size:11px;color:#10b981;">↑ +8% recovery over withheld test year</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SCIENTIFIC ARCHITECTURE & WORKING DIAGRAM (WITH MOVING DASHED LINES) -->
+  <section id="architecture" class="section architecture-section">
+    <div class="section-head-center">
+      <span class="section-kicker">End-to-End Scientific Architecture</span>
+      <h2 class="section-title">
+        Connected To The World’s Leading<br>
+        <strong>Environmental Data Streams.</strong>
+      </h2>
+      <p class="section-desc">
+        Watch data flow seamlessly from orbital remote sensing instruments through automated Python feature harmonization into cross-validated ridge forecasting models.
+      </p>
+    </div>
+
+    <div class="arch-diagram-wrapper">
+      <!-- Animated SVG Connecting Lines with Moving Dashes -->
+      <svg 
+        style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;" 
+        viewBox="0 0 1000 320" 
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#38bdf8" />
+            <stop offset="100%" stop-color="#0284c7" />
+          </linearGradient>
+          <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0284c7" />
+            <stop offset="100%" stop-color="#10b981" />
+          </linearGradient>
+        </defs>
+
+        <!-- Stream 1: Top Input to Engine -->
+        <path d="M 280 60 C 380 60, 420 160, 500 160" fill="none" stroke="url(#flowGrad1)" stroke-width="2.5" class="flow-line flow-path" data-flow="satellite" />
+        <!-- Stream 2: Middle Input to Engine -->
+        <path d="M 280 160 C 380 160, 420 160, 500 160" fill="none" stroke="url(#flowGrad1)" stroke-width="2.5" class="flow-line flow-path" data-flow="weather" />
+        <!-- Stream 3: Bottom Input to Engine -->
+        <path d="M 280 260 C 380 260, 420 160, 500 160" fill="none" stroke="url(#flowGrad1)" stroke-width="2.5" class="flow-line flow-path" data-flow="api" />
+
+        <!-- Engine to Output 1 -->
+        <path d="M 520 160 C 600 160, 640 60, 740 60" fill="none" stroke="url(#flowGrad2)" stroke-width="2.5" class="flow-line" />
+        <!-- Engine to Output 2 -->
+        <path d="M 520 160 C 600 160, 640 160, 740 160" fill="none" stroke="url(#flowGrad2)" stroke-width="2.5" class="flow-line" />
+        <!-- Engine to Output 3 -->
+        <path d="M 520 160 C 600 160, 640 260, 740 260" fill="none" stroke="url(#flowGrad2)" stroke-width="2.5" class="flow-line" />
+      </svg>
+
+      <div class="arch-grid-columns">
+        <!-- Column 1: Ingestion Sources -->
+        <div>
+          <div class="arch-col-title">
+            <span style="width:8px;height:8px;background:#0284c7;border-radius:50%;"></span>
+            01 / Ingestion Feeds
+          </div>
+          
+          <div class="arch-node" data-flow="satellite">
+            <h4>NASA MODIS (Terra & Aqua)</h4>
+            <span>MOD11A2 Land Temperature (1km) & MOD13Q1 NDVI (250m) 8-day satellite passes</span>
+          </div>
+
+          <div class="arch-node" data-flow="weather">
+            <h4>Copernicus ECMWF ERA5</h4>
+            <span>13+ years of reanalysis atmospheric moisture, rainfall, solar radiation & wind</span>
+          </div>
+
+          <div class="arch-node" data-flow="api">
+            <h4>Open-Meteo High-Res API</h4>
+            <span>Downscaled meteorological updates matched to local coordinate centroids</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Core Processing & ML Engine -->
+        <div>
+          <div class="arch-col-title">
+            <span style="width:8px;height:8px;background:#10b981;border-radius:50%;"></span>
+            02 / Processing & ML Core
+          </div>
+
+          <div class="arch-node arch-node-center" style="margin-top:20px;">
+            <h4>GeoCast Python Harmonizer</h4>
+            <span>Cleans missing telemetry, aggregates calendar months, and constructs lagged feature vectors.</span>
+          </div>
+
+          <div class="arch-node arch-node-center">
+            <h4>Autoregressive Ridge Models</h4>
+            <span>Trains independent regularized linear horizons. Backtests forecasts on 12 withheld test months.</span>
+          </div>
+
+          <div class="arch-node arch-node-center">
+            <h4>Validation Against Persistence</h4>
+            <span>Benchmarks model RMSE against standard "no-change" baselines to prevent overconfident projections.</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Output Intelligence -->
+        <div>
+          <div class="arch-col-title">
+            <span style="width:8px;height:8px;background:#059669;border-radius:50%;"></span>
+            03 / Foresight Delivery
+          </div>
+
+          <div class="arch-node">
+            <h4>6-Month Outlook Curves</h4>
+            <span>Monthly projections with uncertainty bounds for Heat, Water, and Vegetation.</span>
+          </div>
+
+          <div class="arch-node">
+            <h4>Predictive Factor Attribution</h4>
+            <span>Explains whether incoming trends are driven by rainfall deficits or prior solar heating.</span>
+          </div>
+
+          <div class="arch-node">
+            <h4>Zero-Lag Inference API</h4>
+            <span>FastAPI service delivering instant precomputed rollouts for frontend client explorers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES IN CARD FORMATS WITH IMAGES & PREMIUM FEEL -->
+  <section id="usecases" class="section">
+    <div class="section-head-center">
+      <span class="section-kicker">Operational Applications</span>
+      <h2 class="section-title">
+        Built For Real-World Decisions<br>
+        <strong>Across Fragile Landscapes.</strong>
+      </h2>
+      <p class="section-desc">
+        Explore how researchers, urban resilience officers, and agricultural bodies put predictive environmental indicators to work before crises materialize.
+      </p>
+    </div>
+
+    <div class="usecase-grid-3">
+      <!-- Use Case 1: Urban Heat -->
+      <article class="usecase-card">
+        <div class="usecase-media">
+          <img src="/src/assets/usecase_urban_heat.jpg" alt="Urban heat island satellite thermal analysis" class="usecase-img" />
+          <span class="usecase-tag">URBAN RESILIENCE</span>
+        </div>
+        <div class="usecase-content">
+          <h3>Urban Heat Island Mitigation & City Planning</h3>
+          <p>
+            Pinpoint asphalt and industrial zones where surface heat concentrates up to 8°C above green parks. City municipal teams deploy cooling shelters and plan reflective urban corridors months ahead of summer heatwaves.
+          </p>
+          <a class="usecase-link" href="/?outcome=heat#forecast">
+            Explore Urban Thermal Lens <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Use Case 2: Agriculture -->
+      <article class="usecase-card">
+        <div class="usecase-media">
+          <img src="/src/assets/usecase_agriculture.jpg" alt="Precision agricultural vegetation index" class="usecase-img" />
+          <span class="usecase-tag">AGRI-FOOD SECURITY</span>
+        </div>
+        <div class="usecase-content">
+          <h3>Crop Health & Drought Vulnerability</h3>
+          <p>
+            Track 250-meter chlorophyll vitality across regional farm clusters. Early detection of moisture-stressed crop canopies allows agricultural cooperatives to optimize irrigation and manage crop insurance reserves.
+          </p>
+          <a class="usecase-link" href="/?outcome=vegetation#forecast">
+            Explore Vegetation Outlook <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Use Case 3: Water Reservoir -->
+      <article class="usecase-card">
+        <div class="usecase-media">
+          <img src="/src/assets/usecase_water.jpg" alt="Hydrological reservoir and watershed analysis" class="usecase-img" />
+          <span class="usecase-tag">WATERSHED STRESS</span>
+        </div>
+        <div class="usecase-content">
+          <h3>Reservoir Inflow & Water Balance Forecasting</h3>
+          <p>
+            Model the balance between rainfall replenishment and atmospheric evapotranspiration. Predict hydrological deficits in catchment basins to protect municipal drinking reserves from unexpected drought.
+          </p>
+          <a class="usecase-link" href="/?outcome=water#forecast">
+            Explore Hydrology Lens <span>→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- STATS COUNTER BANNER -->
+    <div class="stats-banner">
+      <div class="stat-item">
+        <h3>250M+</h3>
+        <span>Harmonized Data Points</span>
+      </div>
+      <div class="stat-item">
+        <h3>12,000+</h3>
+        <span>Spatial Grid Cells</span>
+      </div>
+      <div class="stat-item">
+        <h3>6 Mo</h3>
+        <span>Predictive Horizon</span>
+      </div>
+      <div class="stat-item">
+        <h3>99.8%</h3>
+        <span>Pipeline Reliability</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & TEAM DETAILS PLACEHOLDER -->
+  <section id="about" class="section" style="padding-top:20px;padding-bottom:80px;">
+    <div class="section-head-center">
+      <span class="section-kicker">Project Provenance</span>
+      <h2 class="section-title">
+        Science-First Architecture.<br>
+        <strong>Grounded In Open Research.</strong>
+      </h2>
+      <p class="section-desc">
+        GeoCast is engineered to bridge raw remote sensing telemetry with accessible, transparent machine learning that practitioners can interrogate and trust.
+      </p>
+    </div>
+
+    <div class="team-preview-box">
+      <h4>👥 Core Research & Engineering Team</h4>
+      <p>
+        Detailed contributor profiles, academic advisory board, and institutional partner credits will be updated here.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="landing-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="nav-brand-icon">◎</div>
+          <div class="nav-brand-name">GeoCast<span>.</span></div>
+        </div>
+        <p>
+          Planetary environmental intelligence platform combining multi-spectral satellite observations with transparent time-series forecasting.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="/">Live Demo Dashboard</a></li>
+          <li><a href="/?outcome=heat">Thermal LST Model</a></li>
+          <li><a href="/?outcome=vegetation">NDVI Canopy Index</a></li>
+          <li><a href="/?outcome=water">Climatic Water Balance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Data Sources</h5>
+        <ul>
+          <li><a href="https://modis.ornl.gov/" target="_blank" rel="noopener">NASA MODIS Web Service</a></li>
+          <li><a href="https://www.ecmwf.int/" target="_blank" rel="noopener">ECMWF Copernicus ERA5</a></li>
+          <li><a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo Climate API</a></li>
+          <li><a href="https://earthexplorer.usgs.gov/" target="_blank" rel="noopener">USGS Earth Explorer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Methodology</h5>
+        <ul>
+          <li><a href="#architecture">Scientific Architecture</a></li>
+          <li><a href="#features">Feature Definitions</a></li>
+          <li><a href="#usecases">Case Studies</a></li>
+          <li><a href="/">Try Interactive App →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 GeoCast Research Group. Open science & reproducible environmental intelligence.</span>
+      <a href="/">Open Interactive Dashboard ↗</a>
+    </div>
+  </footer>
+
+  <!-- Interactive script for 3D container scroll & mockup preview -->
+  <script src="/src/landing.js"></script>
+</body>
+</html>
