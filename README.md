@@ -98,6 +98,18 @@ Copy `.env.example` to `.env` only if you need custom data or artifact paths. Cr
 
 The repository is prepared for an ordinary Git commit and push. No GitHub repository is created or pushed automatically, and no remote URL is assumed.
 
+## Deploy to Vercel
+
+Import `weeyev/gwcc` with **Root Directory set to the repository root** (leave it
+blank, not `backend`). The committed `vercel.json` selects FastAPI and trains all
+three regions from the checked-in samples during the build. Leave Install Command
+and Output Directory at their defaults. `requirements.txt` installs the backend;
+`app.py` loads its source so the frontend, samples, and generated model paths stay
+relative to the repository root. No NASA or Google credentials are required.
+
+After deployment, check `/api/health` lists all three trained regions and open `/`
+to verify the dashboard. Training happens during builds, never on forecast requests.
+
 ## Scientific limits
 
 These models use roughly two years of point-level MODIS observations and coarse ERA5 weather estimates. Product QA flags are not yet screened, and a single short chronological validation window provides limited evidence. Water availability means rainfall minus reference evapotranspiration, not measured water extent or groundwater. NDVI is greenness, not a deforestation measurement. Contributions explain a prediction and do not establish causes or intervention effects.
